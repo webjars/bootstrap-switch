@@ -11,7 +11,7 @@
     <packaging>jar</packaging>
     <groupId>org.webjars</groupId>
     <artifactId>bootstrap-switch</artifactId>
-    <version>2.0.1</version>
+    <version>2.0.2-SNAPSHOT</version>
     <name>Bootstrap-switch</name>
     <description>WebJar for Bootstrap-switch</description>
     <url>http://webjars.org</url>
@@ -36,7 +36,7 @@
         <url>http://github.com/webjars/bootstrap-switch</url>
         <connection>scm:git:https://github.com/webjars/bootstrap-switch.git</connection>
         <developerConnection>scm:git:https://github.com/webjars/bootstrap-switch.git</developerConnection>
-        <tag>bootstrap-switch-2.0.1</tag>
+        <tag>HEAD</tag>
     </scm>
     
     <dependencies>

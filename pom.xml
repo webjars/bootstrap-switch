@@ -5,13 +5,13 @@
     <parent>
         <groupId>org.sonatype.oss</groupId>
         <artifactId>oss-parent</artifactId>
-        <version>7</version>
+        <version>9</version>
     </parent>
     
     <packaging>jar</packaging>
     <groupId>org.webjars</groupId>
     <artifactId>bootstrap-switch</artifactId>
-    <version>1.9-SNAPSHOT</version>
+    <version>2.0.1-SNAPSHOT</version>
     <name>Bootstrap-switch</name>
     <description>WebJar for Bootstrap-switch</description>
     <url>http://webjars.org</url>
@@ -43,18 +43,18 @@
         <dependency>
             <groupId>org.webjars</groupId>
             <artifactId>jquery</artifactId>
-            <version>1.9.1</version>
+            <version>2.1.0</version>
         </dependency>
         <dependency>
             <groupId>org.webjars</groupId>
             <artifactId>bootstrap</artifactId>
-            <version>2.3.2</version>
+            <version>3.1.0</version>
         </dependency>
     </dependencies>
     
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <upstream.version>1.8</upstream.version>
+        <upstream.version>2.0.1</upstream.version>
         <upstream.url>https://github.com/nostalgiaz/bootstrap-switch/archive</upstream.url>
         <destDir>${project.build.outputDirectory}/META-INF/resources/webjars/${project.artifactId}/${upstream.version}</destDir>
     </properties>
@@ -93,7 +93,7 @@
                                 <unzip src="${project.build.directory}/${project.artifactId}.zip" dest="${project.build.directory}" />
                                 <echo message="moving resources" />
                                 <move todir="${destDir}">
-                                    <fileset dir="${project.build.directory}/bootstrap-switch-${upstream.version}/static" />
+                                    <fileset dir="${project.build.directory}/bootstrap-switch-${upstream.version}/build" />
                                 </move>
                             </target>
                         </configuration>
@@ -103,7 +103,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-release-plugin</artifactId>
-                <version>2.3.2</version>
+                <version>2.4.2</version>
             </plugin>
         </plugins>
         <resources>
@@ -112,6 +112,15 @@
                 <targetPath>${destDir}</targetPath>
             </resource>
         </resources>
+        <extensions>
+            <extension>
+                <!-- this extension is required by wagon in order to pass the proxy -->
+                <!-- cf. http://jira.codehaus.org/browse/MNG-5237 -->
+                <groupId>org.apache.maven.wagon</groupId>
+                <artifactId>wagon-http-lightweight</artifactId>
+                <version>2.4</version>
+            </extension>
+        </extensions>
     </build>
 
 </project>

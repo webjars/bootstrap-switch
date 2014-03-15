@@ -1,7 +1,4 @@
-/*global requirejs */
-
 requirejs.config({
-  shim: {
-    'bootstrap-switch': [ 'webjars!jquery.js' ]
-  }
+    paths: { "bootstrap-switch": webjars.path("bootstrap-switch", "js/bootstrap-switch") },
+    shim: { "bootstrap-switch": [ "jquery" ] }
 });

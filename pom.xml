@@ -57,6 +57,12 @@
         <upstream.version>3.0.1</upstream.version>
         <upstream.url>https://github.com/nostalgiaz/bootstrap-switch/archive</upstream.url>
         <destDir>${project.build.outputDirectory}/META-INF/resources/webjars/${project.artifactId}/${upstream.version}</destDir>
+        <requirejs>
+            {
+                "paths": { "bootstrap-switch": "js/bootstrap-switch" },
+                "shim": { "bootstrap-switch": [ "jquery" ] }
+            }
+        </requirejs>
     </properties>
 
     <build>

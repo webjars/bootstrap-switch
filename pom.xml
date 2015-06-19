@@ -11,7 +11,7 @@
     <packaging>jar</packaging>
     <groupId>org.webjars</groupId>
     <artifactId>bootstrap-switch</artifactId>
-    <version>3.3.2-SNAPSHOT</version>
+    <version>3.3.2</version>
     <name>Bootstrap-switch</name>
     <description>WebJar for Bootstrap-switch</description>
     <url>http://webjars.org</url>
@@ -36,7 +36,7 @@
         <url>http://github.com/webjars/bootstrap-switch</url>
         <connection>scm:git:https://github.com/webjars/bootstrap-switch.git</connection>
         <developerConnection>scm:git:https://github.com/webjars/bootstrap-switch.git</developerConnection>
-        <tag>HEAD</tag>
+        <tag>bootstrap-switch-3.3.2</tag>
     </scm>
     
     <dependencies>
@@ -95,11 +95,11 @@
                         <goals><goal>run</goal></goals>
                         <configuration>
                             <target>
-                                <echo message="unzip archive"/>
-                                <unzip src="${project.build.directory}/${project.artifactId}.zip" dest="${project.build.directory}"/>
-                                <echo message="moving resources"/>
+                                <echo message="unzip archive" />
+                                <unzip src="${project.build.directory}/${project.artifactId}.zip" dest="${project.build.directory}" />
+                                <echo message="moving resources" />
                                 <move todir="${destDir}">
-                                    <fileset dir="${project.build.directory}/bootstrap-switch-${upstream.version}/dist"/>
+                                    <fileset dir="${project.build.directory}/bootstrap-switch-${upstream.version}/dist" />
                                 </move>
                             </target>
                         </configuration>
